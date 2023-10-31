@@ -1,0 +1,45 @@
+<div class="container" id="cars-list">
+  <!-- This container is given an 'id' of 'cars-list' -->
+  <div class="row">
+    <div class="col"></div> <!-- An empty column -->
+
+    <div [ngClass]="{ 'carsPageNewUI': true, 'col-sm-7': true }">
+      <!-- This div uses Angular's 'ngClass' directive to conditionally apply CSS classes -->
+      <!-- 'carsPageNewUI' and 'col-sm-7' classes are added based on the provided conditions -->
+      <!-- It appears to be a container for displaying car model details -->
+
+      <!-- Car brands Name -->
+      <h1>Car Models</h1>
+
+      <div
+        *ngFor="let car of carModelDetails | paginate: { itemsPerPage: tableSize, currentPage: page, totalItems: count }; let i = index"
+      >
+        <!-- This section uses an Angular 'ngFor' loop to iterate over 'carModelDetails' -->
+        <!-- 'paginate' pipe is applied to paginate the data -->
+        <!-- For each car model in the data, a component 'app-carsdata-card' is rendered -->
+        <!-- Displaying various car details like brand, model, price, mileage, year, and color -->
+        <app-carsdata-card
+          [carCompanyName]="car.brand"
+          [carModel]="car.model"
+          [carPrice]="car.price"
+          [carMileage]="car.mileage"
+          [manufacturingYear]="car.year"
+          [carColor]="car.color"
+          [carLocation]="car.location"
+        ></app-carsdata-card>
+      </div>
+
+      <div class="text-center my-5">
+        <!-- This div contains pagination controls -->
+        <pagination-controls
+          class="twik"
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+        />
+      </div>
+    </div>
+
+    <div class="col"></div> <!-- Another empty column -->
+  </div>
+</div>

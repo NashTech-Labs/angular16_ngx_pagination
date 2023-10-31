@@ -1,0 +1,56 @@
+<div class="carsdata-card-container">
+  <!-- Container for the card content -->
+
+  <mat-card class="example-card my-5">
+    <!-- Material card element with some styling -->
+
+    <mat-card-header>
+      <!-- Card header section -->
+
+      <mat-card-title class="card-title">{{ carModel }}</mat-card-title>
+      <!-- Title of the card, dynamically populated with the 'carModel' data -->
+
+      <mat-card-subtitle class="card-title">{{ carPrice }}</mat-card-subtitle>
+      <!-- Subtitle of the card, dynamically populated with the 'carPrice' data -->
+
+    </mat-card-header>
+    <br />
+
+    <mat-card-content>
+      <!-- Card content section -->
+
+      <div class="info d-flex justify-content-between">
+        <!-- Container for information icons, using Bootstrap classes -->
+
+        <h3><i class="fa-solid fa-gauge" [style.color]="'#d73b1e'"></i></h3>
+        <!-- Icon for car gauge with a custom color -->
+
+        <h3><i  class="fa-solid fa-location-dot" [style.color]="'#d73b1e'"></i></h3>
+        <!-- Icon for location with a custom color -->
+
+        <h3><i class="fa-solid fa-calendar-days" [style.color]="'#d73b1e'"></i></h3>
+        <!-- Icon for calendar/days with a custom color -->
+
+        <h3><i class="fa-solid fa-droplet" [style.color]="'#d73b1e'"></i></h3>
+        <!-- Icon for a droplet (possibly for fuel) with a custom color -->
+
+      </div>
+      <div class="info d-flex justify-content-between">
+        <!-- Container for additional car information, using Bootstrap classes -->
+
+        <h3>{{ carMileage }}</h3>
+        <!-- Car mileage value, dynamically populated with the 'carMileage' data -->
+
+        <h3>{{ carLocation }}</h3>
+        <!-- Car location value, dynamically populated with the 'carLocation' data -->
+
+        <h3>{{ manufacturingYear }}</h3>
+        <!-- Car manufacturing year, dynamically populated with the 'manufacturingYear' data -->
+
+        <h3>{{ carColor }}</h3>
+        <!-- Car color, dynamically populated with the 'carColor' data -->
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
